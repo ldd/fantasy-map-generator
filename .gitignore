@@ -4,7 +4,7 @@ index.html
 
 #project specific
 *.min.js
-dist/
+dist/*.min*
 
 #node specific
 node_modules
