@@ -1,10 +1,5 @@
-#demo files
-demo
-index.html
-
-#project specific
-*.min.js
-dist/
+#distribution specific
+dist/main*
 
 #node specific
 node_modules
