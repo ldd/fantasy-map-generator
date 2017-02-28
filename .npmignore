@@ -1,0 +1,13 @@
+#demo files
+demo/
+index.html
+
+#references to original map generator
+reference/
+
+#webpack configuration files
+webpack.config.js
+webpack.web.config.js
+
+#minified distribution files
+dist/*.min*

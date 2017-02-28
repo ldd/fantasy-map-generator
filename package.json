@@ -1,0 +1,40 @@
+{
+  "name": "fantasy-map-generator",
+  "version": "0.0.1",
+  "description": "minimal fantasy map generator",
+  "main": "dist/main.js",
+  "author": "Leonardo Florez",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ldd/fantasy-map-generator.git"
+  },
+  "keywords": [
+    "map",
+    "terrain"
+  ],
+  "scripts": {
+    "dev": "webpack",
+    "node": "webpack --config webpack.node.config.js --define process.env.NODE_ENV=\"'production'\"",
+    "web": "webpack --config webpack.web.config.js --define process.env.NODE_ENV=\"'production'\"",
+    "webWorker": "webpack --config webpack.web.config.js --define process.env.NODE_ENV=\"'production'\" --env.webWorker",
+    "lint": "node_modules/eslint/bin/eslint.js --ext .js ./src"
+  },
+  "dependencies": {
+    "d3-array": "^1.0.2",
+    "d3-voronoi": "^1.1.1",
+    "seedrandom": "^2.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.1.10",
+    "eslint": "^3.16.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.2",
+    "eslint-plugin-standard": "^2.0.1",
+    "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony",
+    "uglifyjs-webpack-plugin": "^0.2.1",
+    "webpack": "^2.2.1"
+  }
+}

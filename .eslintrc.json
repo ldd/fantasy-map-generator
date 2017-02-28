@@ -1,0 +1,49 @@
+{
+  "extends": "standard",
+  "env":{
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 5,
+    "sourceType": "module"
+  },
+  "root": true,
+  "rules": {
+    "indent": [0, 4],
+    // require or disallow space before blocks (off by default)
+    "space-before-blocks": [0,
+      {
+        "classes": "always",
+        "keywords": "never",
+        "functions": "always"
+      }
+    ],
+    // enforce one true brace style (off by default)
+    "brace-style": [0,"stroustrup",{"allowSingleLine": true}],
+    // enforce padding within blocks (off by default)
+    "padded-blocks": [0,
+      {
+        "blocks": "never",
+        "classes": "always"
+      }
+    ],
+    "space-infix-ops": 0,
+    "space-before-function-paren": [0,
+      {
+        "anonymous": "never",
+        "named": "never"
+      }
+    ],
+    // require or disallow use of semicolons instead of ASI
+    "semi": [0,"always",{"omitLastInOneLineBlock": true}],
+
+    "keyword-spacing": [0,
+      {
+        "before": true,
+        "after": false
+      }
+    ],
+    // allow just one var statement per function (off by default)
+    "one-var": 0
+  }
+}

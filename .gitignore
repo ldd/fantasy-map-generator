@@ -1,0 +1,14 @@
+#demo files
+demo
+index.html
+
+#project specific
+*.min.js
+dist/
+
+#node specific
+node_modules
+
+#Editor specific
+.DS_Store
+.idea
