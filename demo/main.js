@@ -7,6 +7,7 @@ var demo = (function(api){
             loadMap: () => api.loadMap('#mesh', 'map'),
             saveMap: () => api.saveMap(api._currentMap, 'map'),
             downloadMap: () => api.downloadMap(api._currentMap, 'map.json'),
+            downloadPicture: () => api.downloadPicture('mesh', 'map.png'),
             colorMap: () => api.colorMap('#mesh', 'seaColor', 'landColorStart', 'landColorEnd')
         };
         const actions = document.getElementById('actions');

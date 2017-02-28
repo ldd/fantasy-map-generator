@@ -1,4 +1,4 @@
-/* globals d3,terrain */
+/* globals d3,terrain,saveSvgAsPng */
 
 var demo = (function(api){
     api._currentMap = null;
@@ -54,13 +54,17 @@ var demo = (function(api){
         a.click();
     };
 
+    api.downloadPicture = function downloadPicture(svgId, pictureName){
+        saveSvgAsPng(document.getElementById(svgId), pictureName, {left: -500, top: -500});
+    };
+
     api.colorMap = function colorMap(svgId, seaColorId, landColorStartId, landColorEndId){
         if(api._currentMap) {
             // make sure to match a map to what the terrain.colorMap expects
             api._currentMap.points.mesh = api._currentMap.mesh;
 
             const {points} = api._currentMap;
-            
+
             // we get the svg, and the colors
             const svg = d3.select(svgId);
             const seaColor = document.getElementById(seaColorId).value;
