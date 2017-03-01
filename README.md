@@ -54,6 +54,11 @@ terrain.generateMap(512, 'map!', false);
 Version notes
 -------------
 
+* Version 0.0.2 
+  * Add getting svg example in the `README`
+  * Save to png in the demo (`gh-pages` branch)
+  * Add `web` and `webWorker` builds (`npm-module` branch)
+
 * Version 0.0.1 initial release
  
 License: MIT
