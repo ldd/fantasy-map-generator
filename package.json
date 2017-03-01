@@ -17,7 +17,9 @@
     "dev": "webpack",
     "node": "webpack --config webpack.node.config.js --define process.env.NODE_ENV=\"'production'\"",
     "web": "webpack --config webpack.web.config.js --define process.env.NODE_ENV=\"'production'\"",
+    "web:uglify": "webpack --config webpack.web.config.js --define process.env.NODE_ENV=\"'production'\" --env.uglify",
     "webWorker": "webpack --config webpack.web.config.js --define process.env.NODE_ENV=\"'production'\" --env.webWorker",
+    "webWorker:uglify": "webpack --config webpack.web.config.js --define process.env.NODE_ENV=\"'production'\" --env.webWorker --env.uglify",
     "lint": "node_modules/eslint/bin/eslint.js --ext .js ./src"
   },
   "dependencies": {
