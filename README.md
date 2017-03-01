@@ -28,6 +28,7 @@ var aMap = terrain.generateMap(512, 'map!', false);
 
 // Draw a map to a svg element.
 // terrain.drawMap(svgElement, points, coast, rivers);
+var svgElement = d3.select('#mesh');
 terrain.drawMap(svgElement, aMap.points, aMap.coast, aMap.rivers);
 
 // Color a map inside a svg element.
