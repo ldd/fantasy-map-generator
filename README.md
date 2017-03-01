@@ -3,6 +3,8 @@ terrain.js
 
 Minimal JavaScript fantasy map generator.
 
+See the [demo](https://ldd.github.io/fantasy-map-generator/).
+
 Author: Leonardo FLorez
 
 Can be used as a plain script, or a Node.js module.

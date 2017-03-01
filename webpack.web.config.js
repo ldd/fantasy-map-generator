@@ -3,6 +3,9 @@ var webpack = require('webpack');
 
 module.exports = function (env) {
     env = env || {};
+    var definePlugin = new webpack.DefinePlugin({
+        __DEV__: false
+    });
     var externals = {
         'd3': 'd3',
         'd3-voronoi': 'd3',
@@ -10,15 +13,25 @@ module.exports = function (env) {
     };
     var entryString = 'src/main.js';
     var outputFilename = 'terrain.min.js';
-    if(env.webWorker){
+    var plugins = [definePlugin, new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)];
+    if(env.webWorker) {
         externals = {};
         entryString = 'src/terrain/terrain.js';
         outputFilename = 'terrain.worker.min.js';
     }
-    console.log(externals, entryString);
-    var definePlugin = new webpack.DefinePlugin({
-        __DEV__: false
-    });
+    if(env.uglify){
+        plugins.push(new webpack.optimize.UglifyJsPlugin({
+            drop_console: true,
+            sourceMap: false,
+            minimize: true,
+            output: {
+                comments: false
+            },
+            compress: {
+                warnings: false
+            }
+        }));
+    }
     return {
         devtool: 'cheap-module-source-map',
         entry: {
@@ -30,21 +43,7 @@ module.exports = function (env) {
             filename: outputFilename,
             library: 'terrain'
         },
-        plugins: [
-            definePlugin,
-            new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-            new webpack.optimize.UglifyJsPlugin({
-                drop_console: true,
-                sourceMap: false,
-                minimize: true,
-                output: {
-                    comments: false
-                },
-                compress: {
-                    warnings: false
-                }
-            })
-        ],
+        plugins: plugins,
         module: {
             loaders: [
                 {
