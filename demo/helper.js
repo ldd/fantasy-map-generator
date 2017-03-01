@@ -16,13 +16,22 @@ var demo = (function(api){
         }
         return api.maps[api.currentIndex];
     }
+    function parseNumber(n){
+        // attempt to evaluate n in the form 'n^m'
+        if(isNaN(n)){
+            n = n.split('^').reduce((a, b) => Math.pow(a, b));
+        }
+        // either n is an actual number now, so return it
+        // or it is not, so return a default value
+        return isNaN(n)? api.n: (+n);
+    }
     api.addMap = function tacoMap(nId, svgId) {
         api._currentMap = api.maps[api.currentIndex];
         if(api._currentMap){
             api._currentMap.points.mesh = api._currentMap.mesh;
             const {points, coast, rivers} = api._currentMap;
 
-            api.n = +document.getElementById(nId).value || api.n;
+            api.n = parseNumber(document.getElementById(nId).value);
             // if old n and new n are different, you could potentially reset the cache here
             // resetMapCache();
             makeMap(api.n);
