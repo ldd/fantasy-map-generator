@@ -10,4 +10,6 @@ webpack.config.js
 webpack.web.config.js
 
 #minified distribution files
-dist/*.min*
+dist/*
+!dist/*.min*
+!dist/main.js*

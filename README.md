@@ -53,7 +53,8 @@ terrain.generateMap(512, 'map!', false);
 
 Version notes
 -------------
-
+* Version 0.0.3
+  * Fix adding `web` and `webWorker` builds, ignored by `.npmignore`
 * Version 0.0.2 
   * Add getting svg example in the `README`
   * Save to png in the demo (`gh-pages` branch)
