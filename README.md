@@ -3,7 +3,11 @@ terrain.js
 
 Minimal JavaScript fantasy map generator.
 
+![fantasy map example](https://user-images.githubusercontent.com/1187476/30304277-a1880070-973a-11e7-938f-1008f0409132.png)
+
 See the [demo](https://ldd.github.io/fantasy-map-generator/).
+
+![fantasy map slideshow](https://user-images.githubusercontent.com/1187476/30303900-933e8644-9738-11e7-8f3d-bea3340f8986.gif)
 
 Author: Leonardo FLorez
 
@@ -55,6 +59,7 @@ terrain.generateMap(512, 'map!', false);
 
 Version notes
 -------------
+  * Add an image and a slideshow to the `README`
 * Version 0.0.3
   * Fix adding `web` and `webWorker` builds, ignored by `.npmignore`
 * Version 0.0.2 
